@@ -156,8 +156,8 @@ export const Products = () => {
   return (
     <section className="project" id="projects">
       <Container>
-        {isLoading ? <div className="text-center">
-          <div className="spinner-border" role="status">
+        {isLoading ? <div className="text-center" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '9999' }}>
+          <div className="spinner-border fw-bold text-info" role="status">
             <span className="visually-hidden">Cargando...</span>
           </div>
         </div> :
@@ -216,20 +216,6 @@ export const Products = () => {
             </Col>
           </Row>
         }
-
-        {/* <EditProductModal
-          isOpen={isEditModalOpen}
-          onClose={() => setIsEditModalOpen(false)}
-          product={selectedProductForEdit}
-          onUpdateProduct={(updatedProduct) => {
-            // Actualiza la lista de productos con el producto actualizado
-            const updatedProducts = products.map((product) =>
-              product.id === updatedProduct.id ? updatedProduct : product
-            );
-            setProducts(updatedProducts);
-          }}
-        /> */}
-
       </Container >
     </section >
   )
