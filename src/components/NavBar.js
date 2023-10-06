@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Col } from "react-bootstrap";
 import logo from '../assets/img/logo.svg';
 import {
   BrowserRouter as Router
