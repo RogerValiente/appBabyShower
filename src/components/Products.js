@@ -40,7 +40,7 @@ export const Products = () => {
         const { data: productsData, error } = await supabase
           .from('products')
           .select('*')
-          .order('state', { ascending: false });
+          .order('price', { ascending: true });
 
         if (error) {
           console.error('Error fetching data:', error);
