@@ -102,7 +102,7 @@ export const Products = () => {
           if (!username) {
             throw new Error('Por favor, ingrese un alias o nombre');
           }
-
+          setIsLoading(true);
           const { error } = await supabase
             .from('products')
             .update({ state: `Reservado por: ${username}` })
@@ -110,6 +110,7 @@ export const Products = () => {
 
           if (error) {
             console.error('Error al actualizar en la base de datos:', error);
+            setIsLoading(false);
             throw new Error('Error al actualizar en la base de datos');
           }
           const updatedProducts = products.map((product) => {
@@ -119,6 +120,7 @@ export const Products = () => {
             return product;
           });
           setProducts(updatedProducts);
+          setIsLoading(false);
 
           Swal.fire('Reservado', `El producto ha sido reservado por ${username}, con éxito`, 'success');
         } catch (error) {
