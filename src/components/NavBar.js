@@ -34,7 +34,8 @@ export const NavBar = () => {
         <Container>
           <Navbar.Brand href="/">
              <Col size={12} sm={6}>
-              <img style={{ width: '18%', position: 'absolute', top: '0px' }} src={logo} alt="Logo" />
+               <img className="d-sm-none" style={{ width: '25%', position: 'absolute', top: '0px' }} src={logo} alt="Logo" />
+              <img className="d-none d-sm-block" style={{ width: '13%', position: 'absolute', top: '0px' }} src={logo} alt="Logo" />
             </Col>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
