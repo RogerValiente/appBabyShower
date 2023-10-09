@@ -28,7 +28,15 @@ export const ProductCard = ({ title, description, imgUrl, url, price, state, onR
         <Card.Footer>
           <div className="d-flex justify-content-center mt-2">
             {state !== "Disponible" ? (
-              <Button className="m-1 btn-info" disabled>{state}</Button>
+              <>
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    <Button className="m-1 btn btn-warning">Ir al comercio</Button>
+                  </a>
+                  <Button className="m-1 btn btn-info" disabled>{state}</Button>
+                </div>
+
+              </>
             ) : (
               <>
                 <a href={url} target="_blank" rel="noopener noreferrer">
